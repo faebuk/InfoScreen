@@ -1,0 +1,171 @@
+<head>
+  <title>InfoScreen</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+	{{> gridItem position="2" title="News" template="newsContainer"}}
+	{{> gridItem position="2" title="Train Schedule" template="trainContainer"}}
+	{{> gridItem position="3" title="Weather" template="weatherContainer"}}
+	{{> gridItem position="4" title="Tools" template="toolsContainer"}}
+</template>
+
+<template name="newsContainer">
+<ul>
+  <li class="newsitem">
+    <a class="fancybox fancybox.iframe newslink" href="http://www.20min.ch/wissen/history/story/30103882?iframe" title="Infografik des Tages: Vor 24 Jahren starb Freddie Mercury">
+      <h3>Infografik des Tages: Vor 24 Jahren starb Freddie Mercury</h3>
+    </a>
+    <img class="newspic" src="http://static01.20min.ch/dyim/d78946/T470,230/images/content/3/0/1/30103882/1815/teaserbreit.jpg">
+    <div class="newsdesc">
+    <p>Tue, 24 Nov 2015 09:40:36 GMT</p>
+    <p class="newsdescription">Am 24. November 1991 verlor die Musikwelt einen der grössten Rocksänger aller Zeiten. Die Infografik des Tages erzählt seine Geschichte.</p>
+    </div>
+  </li>
+  <li class="newsitem">
+    <a class="fancybox fancybox.iframe newslink" href="http://www.20min.ch/panorama/news/story/21261077?iframe" title="  : Die Bilder des Tages">
+      <h3> : Die Bilder des Tages</h3>
+    </a>
+    <img class="newspic" src="http://static01.20min.ch/dyim/e0f782/T470,230/images/content/2/1/2/21261077/874/teaserbreit.jpg">
+    <div class="newsdesc">
+      <p>Tue, 24 Nov 2015 11:43:58 GMT</p>
+      <p class="newsdescription">Die Bilder des Tages zeigen täglich die besten Fotos aus aller Welt. Von sehenswerten Schnappschüssen über wichtige Ereignisse bis hin zu den wichtigsten Momentaufnahmen.</p>
+      </div>
+  </li>
+</ul>
+</template>
+
+<template name="trainContainer">
+	<table border="0" class="sbbtable">
+      <tr>
+        <th>Von/Nach</th>
+        <th>Gleis</th>
+        <th>Abfahrt/Ankunft</th>
+        <th>Dauer</th>
+        <th>Bezeichnung Zug</th>
+        <th>Umsteigen</th>
+      </tr>
+      <tr>
+        <td>Murten/Morat</td>
+        <td>1</td>
+        <td>20:17</td>
+        <td>00:35:00</td>
+        <td>S</td>
+        <td>0</td>
+      </tr>
+      <tr class="spaceUnder">
+        <td>Bern</td>
+        <td>13</td>
+        <td>20:52</td>
+        <td>00:35:00</td>
+        <td>S</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Murten/Morat</td>
+        <td>1</td>
+        <td>21:17</td>
+        <td>00:35:00</td>
+        <td>S</td>
+        <td>0</td>
+      </tr>
+      <tr class="spaceUnder">
+        <td>Bern</td>
+        <td>13</td>
+        <td>21:52</td>
+        <td>00:35:00</td>
+        <td>S</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Murten/Morat</td>
+        <td>1</td>
+        <td>22:17</td>
+        <td>00:35:00</td>
+        <td>S</td>
+        <td>0</td>
+      </tr>
+      <tr class="spaceUnder">
+        <td>Bern</td>
+        <td>13</td>
+        <td>22:52</td>
+        <td>00:35:00</td>
+        <td>S</td>
+        <td>0</td>
+      </tr>
+    </table>
+</template>
+
+<template name="weatherContainer">
+	<div class="weather">
+      <div class="dayweather">
+        <div class="daytitle">24. Nov</div>
+        <div class="weatherimage"><img alt="Wetterbild" src="http://icons.wxug.com/i/c/k/snow.gif" class="weathericon"></div>
+        <div class="weatherdesc">Schneefall</div>
+        <div class="weathertemp"><span class="temphigh">2°</span><span class="templow">1°</span></div>
+        <div class="weathernieder">
+          <p class="wetterdetail">Niederschlag: <span class="wert">80%</span></p>
+        </div>
+        <div class="weatherwind">
+          <p class="wetterdetail">Wind: <span class="wert">5 km/h</span></p>
+        </div>
+        <div class="weatherluft">
+          <p class="wetterdetail">Luftfeuchtigkeit: <span class="wert">77%</span></p>
+        </div>
+      </div>
+      <div class="dayweather">
+        <div class="daytitle">25. Nov</div>
+        <div class="weatherimage"><img alt="Wetterbild" src="http://icons.wxug.com/i/c/k/rain.gif" class="weathericon"></div>
+        <div class="weatherdesc">Regen</div>
+        <div class="weathertemp"><span class="temphigh">4°</span><span class="templow">0°</span></div>
+        <div class="weathernieder">
+          <p class="wetterdetail">Niederschlag: <span class="wert">90%</span></p>
+        </div>
+        <div class="weatherwind">
+          <p class="wetterdetail">Wind: <span class="wert">16 km/h</span></p>
+        </div>
+        <div class="weatherluft">
+          <p class="wetterdetail">Luftfeuchtigkeit: <span class="wert">92%</span></p>
+        </div>
+      </div>
+      <div class="dayweather">
+        <div class="daytitle">26. Nov</div>
+        <div class="weatherimage"><img alt="Wetterbild" src="http://icons.wxug.com/i/c/k/chancerain.gif" class="weathericon"></div>
+        <div class="weatherdesc">Regen möglich</div>
+        <div class="weathertemp"><span class="temphigh">4°</span><span class="templow">-1°</span></div>
+        <div class="weathernieder">
+          <p class="wetterdetail">Niederschlag: <span class="wert">40%</span></p>
+        </div>
+        <div class="weatherwind">
+          <p class="wetterdetail">Wind: <span class="wert">10 km/h</span></p>
+        </div>
+        <div class="weatherluft">
+          <p class="wetterdetail">Luftfeuchtigkeit: <span class="wert">85%</span></p>
+        </div>
+      </div>
+      <div class="dayweather">
+        <div class="daytitle">27. Nov</div>
+        <div class="weatherimage"><img alt="Wetterbild" src="http://icons.wxug.com/i/c/k/partlycloudy.gif" class="weathericon"></div>
+        <div class="weatherdesc">Teils Wolkig</div>
+        <div class="weathertemp"><span class="temphigh">2°</span><span class="templow">-3°</span></div>
+        <div class="weathernieder">
+          <p class="wetterdetail">Niederschlag: <span class="wert">10%</span></p>
+        </div>
+        <div class="weatherwind">
+          <p class="wetterdetail">Wind: <span class="wert">11 km/h</span></p>
+        </div>
+        <div class="weatherluft">
+          <p class="wetterdetail">Luftfeuchtigkeit: <span class="wert">88%</span></p>
+        </div>
+      </div>
+    </div>
+</template>
+
+<template name="toolsContainer">
+	<div>
+		<span>toolsContainer</span>
+	</div>
+</template>

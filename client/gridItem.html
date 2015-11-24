@@ -1,0 +1,10 @@
+<template name="gridItem">
+  <div class="d{{this.position}} row">
+    <div class="titlerow">
+      <h1>{{this.title}}</h1>
+    </div>
+    <div class="contentrow">
+      {{> Template.dynamic template=this.template}}
+    </div>
+  </div>
+</template>
