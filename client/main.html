@@ -15,26 +15,18 @@
 
 <template name="newsContainer">
 <ul>
-  <li class="newsitem">
-    <a class="fancybox fancybox.iframe newslink" href="http://www.20min.ch/wissen/history/story/30103882?iframe" title="Infografik des Tages: Vor 24 Jahren starb Freddie Mercury">
-      <h3>Infografik des Tages: Vor 24 Jahren starb Freddie Mercury</h3>
-    </a>
-    <img class="newspic" src="http://static01.20min.ch/dyim/d78946/T470,230/images/content/3/0/1/30103882/1815/teaserbreit.jpg">
-    <div class="newsdesc">
-    <p>Tue, 24 Nov 2015 09:40:36 GMT</p>
-    <p class="newsdescription">Am 24. November 1991 verlor die Musikwelt einen der grössten Rocksänger aller Zeiten. Die Infografik des Tages erzählt seine Geschichte.</p>
-    </div>
-  </li>
-  <li class="newsitem">
-    <a class="fancybox fancybox.iframe newslink" href="http://www.20min.ch/panorama/news/story/21261077?iframe" title="  : Die Bilder des Tages">
-      <h3> : Die Bilder des Tages</h3>
-    </a>
-    <img class="newspic" src="http://static01.20min.ch/dyim/e0f782/T470,230/images/content/2/1/2/21261077/874/teaserbreit.jpg">
-    <div class="newsdesc">
-      <p>Tue, 24 Nov 2015 11:43:58 GMT</p>
-      <p class="newsdescription">Die Bilder des Tages zeigen täglich die besten Fotos aus aller Welt. Von sehenswerten Schnappschüssen über wichtige Ereignisse bis hin zu den wichtigsten Momentaufnahmen.</p>
-      </div>
-  </li>
+	{{#each news}}
+		<li class="newsitem">
+			<a class="fancybox fancybox.iframe newslink" href="{{link}}?iframe" title="{{title}}">
+			  <h3>{{title}}</h3>
+			</a>
+			<img class="newspic" src="{{image}}">
+			<div class="newsdesc">
+				<p>{{pubDate}}</p>
+				<p class="newsdescription">{{description}}</p>
+			</div>
+		</li>
+	{{/each}}
 </ul>
 </template>
 
@@ -45,58 +37,25 @@
         <th>Gleis</th>
         <th>Abfahrt/Ankunft</th>
         <th>Dauer</th>
-        <th>Bezeichnung Zug</th>
         <th>Umsteigen</th>
       </tr>
-      <tr>
-        <td>Murten/Morat</td>
-        <td>1</td>
-        <td>20:17</td>
-        <td>00:35:00</td>
-        <td>S</td>
-        <td>0</td>
-      </tr>
-      <tr class="spaceUnder">
-        <td>Bern</td>
-        <td>13</td>
-        <td>20:52</td>
-        <td>00:35:00</td>
-        <td>S</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>Murten/Morat</td>
-        <td>1</td>
-        <td>21:17</td>
-        <td>00:35:00</td>
-        <td>S</td>
-        <td>0</td>
-      </tr>
-      <tr class="spaceUnder">
-        <td>Bern</td>
-        <td>13</td>
-        <td>21:52</td>
-        <td>00:35:00</td>
-        <td>S</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>Murten/Morat</td>
-        <td>1</td>
-        <td>22:17</td>
-        <td>00:35:00</td>
-        <td>S</td>
-        <td>0</td>
-      </tr>
-      <tr class="spaceUnder">
-        <td>Bern</td>
-        <td>13</td>
-        <td>22:52</td>
-        <td>00:35:00</td>
-        <td>S</td>
-        <td>0</td>
-      </tr>
-    </table>
+      {{#each trains}}
+		<tr>
+			<td>{{from.station.name}}</td>
+			<td>{{from.platform}}</td>
+			<td>{{format "date" from.departure}}</td>
+			<td>{{format "time" duration}}</td>
+			<td>{{transfers}}</td>
+		</tr>
+		<tr class="spaceUnder">
+			<td>{{to.station.name}}</td>
+			<td>{{to.platform}}</td>
+			<td>{{format "date" to.arrival}}</td>
+			<td>{{format "time" duration}}</td>
+			<td>{{transfers}}</td>
+		</tr>
+      {{/each}}
+	</table>
 </template>
 
 <template name="weatherContainer">
